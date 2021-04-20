@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="_template.xhtml">
+
+	<ui:define name="title">Listage de usuários</ui:define>
+	<ui:define name="content">
+		<p:dataTable value="#{userBean.users}" var="user">
+			<p:column headerText="Nome">
+				<h:outputLabel value="${user.name}" />
+			</p:column>
+			<p:column headerText="Email">
+				<h:outputLabel value="${user.email}" />
+			</p:column>
+			<p:column headerText="Data de nascimento">
+				<h:outputLabel value="${user.birthday}" />
+			</p:column>
+		</p:dataTable>
+	</ui:define>
+
+</ui:composition>
+
+</html>
